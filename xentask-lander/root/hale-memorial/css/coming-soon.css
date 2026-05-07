@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:700&family=Saira+Semi+Condensed:wght@100&family=Spline+Sans+Mono:400');
+html {
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  position: relative;
+  height: 100%;
+  background: linear-gradient(#6084d7 25%, #a2cef4 50%, #a2cef4 50%, #6084d7 100%);
+  font-family: 'Saira Semi Condensed', sans-serif;
+}
+h1 {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  color: #011;
+  margin: auto;
+  font-size: 4em;
+  text-align: center;
+  text-shadow: 0 0 3px #6cf;
+  top: calc(50% - 180px);
+}
+h1:first-line {
+  font-size: 300%;
+  font-family: 'Orbitron', sans-serif;
+}
+
+.contact-img {
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+}
+
+.supporters {
+  position: fixed;
+  bottom: 35px;
+  right: 25px;
+  width: 134px;
+  height: 72px;
+}
+.supporters img {
+  position: absolute;
+}
+.supporters span {
+  position: absolute;
+  top: 28px;
+  width: 100%;
+  text-align: center;
+  margin: auto;
+  font-family: 'Spline Sans Mono', monospace;
+  font-size: 24px;
+  color: #1D550D;
+}
+
+.wrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  margin: 0 auto;
+  perspective: 360px;
+  perspective-origin: 50% 50%;
+}
+
+.top-plane, .bottom-plane {
+  width: 200%;
+  height: 130%;
+  position: absolute;
+  bottom: -30%;
+  left: -50%;
+  background-image: -webkit-linear-gradient(#a2cef4 2px, transparent 2px), -webkit-linear-gradient(left, #a2cef4 2px, transparent 2px);
+  background-size: 100px 100px,100px 100px;
+  background-position: -1px -1px,-1px -1px;
+  transform: rotateX(85deg);
+  animation: planeMoveTop 2s infinite linear;
+}
+
+.bottom-plane {
+  transform: rotateX(-85deg);
+  top: -30%;
+  animation: planeMoveBot 2s infinite linear;
+}
+
+@keyframes planeMoveTop {
+  from {
+    background-position: 0px -100px,0px 0px;
+  }
+  to {
+    background-position: 0px 0px, 100px 0px;
+  }
+}
+@keyframes planeMoveBot {
+  from {
+    background-position: 0px 0px,0px 0px;
+  }
+  to {
+    background-position: 0px -100px, 100px 0px;
+  }
+}
+@media (max-height: 350px) {
+  .wrap {
+    perspective: 210px;
+  }
+}

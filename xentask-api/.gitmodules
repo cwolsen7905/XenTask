@@ -1,0 +1,9 @@
+[submodule "inc/ubcore"]
+	path = inc/ubcore
+	url = https://github.com/cwolsen7905/ubcore
+[submodule "inc/xentask-core"]
+	path = inc/xentask-core
+	url = https://github.com/cwolsen7905/xentask-core
+[submodule "inc/stripe-php"]
+	path = inc/stripe-php
+	url = https://github.com/stripe/stripe-php

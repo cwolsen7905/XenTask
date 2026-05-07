@@ -1,0 +1,82 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xentask-admin
+  namespace: live-prod
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 3
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: xentask-admin
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: xentask-admin
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values: [ "amd64","arm64" ]
+      containers:
+      - env:
+        - name: IS_DEV
+          value: "0"
+        - name: DEPLOY_ENV
+          value: "PROD"
+        - name: API_HOST
+          value: "api.xentask.com"
+        - name: LOGIN_HOST
+          value: "login.xentask.com"
+        image: ghcr.io/your-org/xentask/xentask-admin:master
+        imagePullPolicy: Always
+        name: xentask-admin
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        startupProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /index.php
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /logs
+          name: logs
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: regcred
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - nfs:
+          path: /data/nfs/logs
+          server: your-nfs-server
+        name: logs

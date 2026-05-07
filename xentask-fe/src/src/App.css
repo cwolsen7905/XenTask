@@ -1,0 +1,1083 @@
+.login-body {
+  background: linear-gradient(45deg, #eaeaea, #a8dfff);
+}
+
+.loginwrapper .white {
+  background: #fff;
+}
+
+.loginwrapper .circle {
+  width: 550px;
+  height: 550px;
+  left: 50%;
+  top: 50%;
+  opacity: .7;
+  position: absolute;
+  margin: -290px 0 0 -275px;
+  border: black solid 2px;
+  border-radius: 50%;
+}
+
+.loginwrapper .loginone {
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  top: 50%;
+  position: absolute;
+  margin: -175px 0 0 -175px;
+}
+
+/* Sidebar Nav Icons */
+.sb-nav-link-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  /* Adjust as needed */
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  width: 24px;
+  /* Set a fixed width to prevent shifting */
+  height: 24px;
+  /* Set a fixed height to maintain icon position */
+}
+
+.hidden-nav-icon,
+.shown-nav-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 24px;
+  /* Ensure consistent width */
+  height: 24px;
+  /* Ensure consistent height */
+}
+
+.hidden-nav-icon .treeview-item-icon {
+
+  display: none;
+  transition: transform 0.15s ease;
+  /* Transition defined here */
+}
+
+.nav-link.collapsed .hidden-nav-icon,
+.treeview-item.collapsed .treeview-item-icon {
+  transform: rotate(0deg);
+  /* Initially pointing to the right */
+}
+
+.nav-link.collapsed .hidden-nav-icon,
+.treeview-item .treeview-item-icon {
+  transform: rotate(90deg);
+  /* Rotation when expanded */
+}
+
+.hidden-nav-icon {
+  display: none;
+}
+
+.nav-link:hover .hidden-nav-icon {
+  display: flex;
+}
+
+.nav-link:hover .shown-nav-icon {
+  display: none;
+}
+
+
+.react-calendar {
+  background-color: var(--bs-body-bg) !important;
+}
+
+/* Modal */
+.modal-xxl {
+  --bs-modal-width: 2000px;
+}
+
+.modal-body-xl {
+
+  height: 76em;
+
+}
+
+.card-scrollable {
+  overflow-y: auto;
+  max-height: 85em;
+}
+
+.taskPaneScroll {
+  overflow-y: auto;
+  max-height: 50em;
+}
+
+.task-view .taskPaneScroll {
+  overflow-y: auto;
+  max-height: 100%;
+}
+
+.attachmentItem {
+
+  min-height: 15em;
+  max-width: 10em;
+  margin-left: 1em;
+  margin-top: 1em;
+
+}
+
+/* Styles for the nested submenus */
+.dropdown-menu>li {
+  position: relative;
+}
+
+/* Hide nested submenus by default */
+.dropdown-menu.context-item ul {
+  display: none;
+  position: absolute;
+  /* Adjusted */
+  left: 100%;
+  /* Adjusted */
+  top: 0;
+  /* Adjusted */
+}
+
+/* Show nested submenus on hover */
+.dropdown-menu li:hover.context-item>ul {
+  display: block;
+}
+
+.dropdown-submenu {
+  position: relative;
+}
+
+.dropdown-submenu .dropdown-menu {
+  top: 0;
+  left: 100%;
+  margin-top: -1px;
+  /* Adjust as needed */
+  position: absolute;
+  /* Added */
+}
+
+.inline-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+.custom-select {
+  display: block;
+  width: 100%;
+  height: calc(1.5em + 0.75rem + 2px);
+  padding: 0.375rem 1.75rem 0.375rem 0.75rem;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+  /*color: #495057;
+  background-color: var(--bs-body-bg);
+  background-clip: padding-box;
+  border: 1px solid #ced4da;*/
+  border-radius: 0.25rem;
+  transition: border-color 0.15s ease-in-out, box-shadow 0.15s ease-in-out;
+}
+
+.custom-select:focus {
+  border-color: #80bdff;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
+}
+
+.custom-select-menu {
+  width: 50%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  overflow-y: auto;
+  /*max-height: 16rem;*/
+}
+
+.custom-select-option {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.custom-select-search-container {
+  position: sticky !important;
+  top: -10px;
+  background-color: var(--bs-body-bg);
+  /* Set your desired background color */
+  padding: 1rem;
+  /* Adjust padding as needed */
+  z-index: 1;
+  /* Ensure it appears above the dropdown options */
+}
+
+.tag-input-container {
+
+  overflow-x: auto;
+  white-space: nowrap;
+  /* Prevent tags from wrapping to the next line */
+}
+
+.tags-input {
+  width: 10px;
+}
+
+.close-button.user {
+  position: 'absolute';
+  top: -7px;
+  right: -5px;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  padding: 0;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
+}
+
+
+.circle-user {
+  border-radius: '50%';
+  width: '33px';
+  height: '33px';
+  display: 'flex';
+  justify-content: 'center';
+  align-items: 'center';
+  color: 'white';
+  position: 'relative';
+  margin-right: '5px';
+}
+
+.circle-user:hover .close-button.user {
+  display: flex;
+  position: absolute;
+}
+
+/* Individual tag styles */
+.tags-input button {
+  /* Add any necessary styling for the tags */
+  margin-right: 4px;
+  /* Adjust spacing between tags */
+}
+
+.fields-assignee-title {
+  padding: .75rem 1rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+
+.resize.horizontal {
+  padding: 10px;
+  /* Add padding for spacing */
+  overflow: auto;
+  /* Enable scrolling if content overflows */
+
+  min-width: 100px;
+  /* Set a minimum width for columns */
+  position: relative;
+}
+
+.resize-handle.right {
+  cursor: ew-resize;
+  /* Change cursor to the horizontal resize icon */
+  width: 10px;
+  /* Set an appropriate width for the handle */
+  min-height: 100%;
+  /* Make the handle cover the entire height of the div */
+  position: absolute;
+  /* Position the handle relative to the parent div */
+  top: 0;
+  /* Align the handle to the top of the div */
+  right: 0;
+  /* Align the handle to the right edge of the div */
+  background-color: var(--bs-border-color);
+  border: 1px solid var(--bs-border-color);
+  transition: border-right-color 0.5s;
+  /* Add a smooth transition effect for border color */
+}
+
+
+.resize-handle.right:hover {
+  border-right: 3px solid #0D6EFD;
+  /* Highlight right border on hover */
+}
+
+
+.avatar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 10px;
+  font-weight: 400;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  color: #ffffffe6;
+  text-transform: uppercase;
+  padding: 0;
+  position: relative;
+  flex-shrink: 0;
+  white-space: normal;
+}
+
+
+.time-tracker-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  border: 1px dashed;
+  border-radius: 50%;
+  cursor: pointer;
+  margin-right: 4px;
+}
+
+
+.form-control.valid-input:focus {
+  border-color: #28a745;
+  /* Bootstrap Success color */
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.valid-input {
+  border-color: #28a745;
+  /* Bootstrap Success color */
+  box-shadow: 0 0 0 0.2rem rgba(40, 167, 69, 0.25);
+}
+
+.form-control.invalid-input:focus {
+  border-color: #d9534f;
+  /* Bootstrap Danger color */
+  box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25);
+}
+
+
+.invalid-input {
+  border-color: #d9534f;
+  /* Bootstrap Danger color */
+  box-shadow: 0 0 0 0.2rem rgba(217, 83, 79, 0.25);
+}
+
+
+.card.expanded {
+  width: 100%;
+  /* Final width */
+}
+
+
+.task-description-area {
+
+  min-width: 30%;
+  max-height: 74em;
+
+}
+
+.card-scrollable.description-container {
+  min-height: 28em;
+}
+
+
+.tab-buttons-container {
+  overflow-x: auto;
+  white-space: nowrap;
+  flex-wrap: nowrap !important;
+  /* Prevent wrapping of nav items */
+  overflow-y: hidden;
+}
+
+
+
+.attachmentArea {
+
+  padding: 20px;
+  text-align: center;
+  overflow-y: auto;
+  max-height: 26em;
+
+}
+
+.attachment-highlight {
+  border: 2px dashed #007bff;
+}
+
+.attachment-overlay {
+
+  background-color: transparent;
+
+}
+
+.attachments-close-btn {
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  z-index: 1;
+  width: 2rem;
+  /* Adjust size as needed */
+  height: 2rem;
+  /* Adjust size as needed */
+  border-radius: 50%;
+  border: none;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* Adjust the duration as needed */
+}
+
+.attachments-menu-btn {
+  position: absolute;
+  top: 0px;
+  left: 6px;
+  z-index: 1;
+  color: white;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+  /* Adjust the duration as needed */
+}
+
+/* Show the button on hover and apply the fade-in effect */
+.attachmentItem:hover .attachments-close-btn,
+.attachmentItem:hover .attachments-menu-btn {
+  opacity: 1;
+}
+
+.toolbar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #fff;
+  z-index: 1046;
+  display: flex;
+  flex-direction: column;
+  width: 3%;
+  visibility: hidden;
+  color: #212529;
+  background-clip: padding-box;
+  outline: 0;
+  height: 100%;
+  transition: transform 0.3s ease-in-out;
+  border-left: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+.toolbar.toolbar-end {
+  transform: translateX(100%);
+}
+
+.toolbar.toolbar-end.show {
+  transform: translateX(0);
+  visibility: visible;
+  padding: 6px;
+}
+
+.toolbar-button {
+
+  min-width: 2em;
+
+}
+
+.offcanvas.offcanvas-end.toolbar {
+  right: 76px !important;
+}
+
+.offcanvas-header {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+}
+
+/* Dialpad*/
+#phonePopOver {
+  width: 400px !important;
+}
+
+.phone-keypad {
+  font-size: 2em;
+}
+
+
+/* Status Icon*/
+.color-picker-outer-circle {
+  position: relative;
+  background: transparent;
+  /* Set to transparent */
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+
+.color-picker-inner-circle {
+  position: absolute;
+  border-radius: 50%;
+  width: 12px;
+  height: 12px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.modal-side-panel {
+  /* Offcanvas */
+  position: fixed;
+  z-index: 1055;
+  display: flex;
+  flex-direction: column;
+  max-width: 100%;
+  background-color: var(--bs-body-bg);
+  /* Set your desired background color */
+  background-clip: padding-box;
+  outline: 0;
+  transition: transform 0.3s ease-in-out;
+  height: 100%;
+
+  /* Offcanvas-end */
+  top: 0;
+  right: 0;
+  min-width: 500px;
+  border-left: 1px solid var(--bs-border-color);
+  transform: translateX(100%);
+}
+
+.modal-side-panel.show {
+  transform: none;
+  /* Slide in when the associated "show" class is present */
+}
+
+.modal-side-panel-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* Ensures the title and close button are spaced apart */
+  padding: 1rem;
+  /* Adds padding around the header */
+  border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+
+  display: flex;
+  flex-shrink: 0;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid var(--bs-border-color);
+
+}
+
+.modal-side-panel-header h5 {
+  margin: 0;
+  /* Removes default margin around the title */
+  font-size: 1.25rem;
+  /* Adjust title size */
+  flex-grow: 1;
+  /* Makes the title take available space to push the button to the right */
+}
+
+.modal-side-panel-header .btn-close {
+  padding: 0.25rem 0.5rem;
+  /* Adjust the close button size */
+  margin-left: 1rem;
+  /* Optional: Adds space between title and close button */
+}
+
+.modal-side-panel-content {
+  flex-grow: 1;
+  padding: 1rem;
+  overflow-y: auto;
+}
+
+
+.picker__swatches {
+  display: flex;
+  width: 14em;
+  flex-wrap: wrap;
+}
+
+.picker__swatch {
+  width: 24px;
+  height: 24px;
+  margin: 4px;
+  border: none;
+  padding: 0;
+  border-radius: 4px;
+  cursor: pointer;
+  outline: none;
+}
+
+
+.resizer {
+  background: rgba(0, 0, 0, 0.5);
+  cursor: col-resize;
+  height: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+  touch-action: none;
+  user-select: none;
+  width: 5px;
+}
+
+.resizer.isResizing {
+  background: blue;
+  opacity: 1;
+}
+
+
+.filterDropdownMenu {
+  max-height: 550;
+  min-width: 500;
+  overflow-y: 'auto';
+}
+
+.treeview-menu {
+  list-style-type: none;
+  padding-left: 1rem;
+}
+
+.treeview-item {
+  cursor: pointer;
+  display: flex;
+
+  padding: 0.5rem;
+}
+
+.caret-icon {
+  margin-right: 0.5rem;
+}
+
+.nested {
+  display: none;
+}
+
+.active {
+  display: block;
+}
+
+
+
+.kanban-container {
+  flex: 1; /* Expand to fill remaining space */
+  overflow-y: auto; /* Allow internal scrolling for Kanban items if needed */
+  display: flex; /* Layout for Kanban columns */
+  gap: 1rem; /* Optional spacing between Kanban columns */
+}
+
+.kanban-board {
+  width: 28rem;
+  /* Set a fixed width for each board */
+  height: 100%;
+  /* Ensure all boards have the same height */
+  margin-right: 10px;
+}
+
+
+
+
+/* SB Admin Related CSS */
+
+.fixed-top,
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav,
+.sb-nav-fixed .sb-topnav {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+  border-bottom: 1px solid var(--bs-border-color);
+}
+
+#layoutAuthentication {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#layoutAuthentication #layoutAuthentication_content {
+  min-width: 0;
+  flex-grow: 1;
+}
+
+#layoutAuthentication #layoutAuthentication_footer {
+  min-width: 0;
+}
+
+#layoutSidenav {
+  display: flex;
+}
+
+#layoutSidenav #layoutSidenav_nav {
+  flex-basis: 275px;
+  flex-shrink: 0;
+  transition: transform 0.15s ease-in-out;
+  z-index: 1038;
+  transform: translateX(-275px);
+}
+
+#layoutSidenav #layoutSidenav_content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-width: 0;
+  flex-grow: 1;
+  min-height: calc(100vh - 56px);
+  margin-left: -275px;
+}
+
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+  transform: translateX(0);
+}
+
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  z-index: 1037;
+  opacity: 0.5;
+  transition: opacity 0.3s ease-in-out;
+}
+
+div.is-invalid,
+button.is-invalid {
+  border: 1px solid #dc3545;
+}
+
+
+
+@media (min-width: 992px) {
+  #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(0);
+  }
+
+  #layoutSidenav #layoutSidenav_content {
+    margin-left: 0;
+    transition: margin 0.15s ease-in-out;
+  }
+
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_nav {
+    transform: translateX(-275px);
+  }
+
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
+    margin-left: -225px;
+  }
+
+  .sb-sidenav-toggled #layoutSidenav #layoutSidenav_content:before {
+    display: none;
+  }
+}
+
+.sb-nav-fixed .sb-topnav {
+  z-index: 1039;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav {
+  width: 275px;
+  height: 100vh;
+  z-index: 1038;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav {
+  padding-top: 56px;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_nav .sb-sidenav .sb-sidenav-menu {
+  overflow-y: auto;
+}
+
+.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+  padding-left: 275px;
+  top: 40px;
+  /*56px;*/
+}
+
+.sb-sidenav-toggled.sb-nav-fixed #layoutSidenav #layoutSidenav_content {
+  padding-left: 225px;
+}
+
+.sb-sidenav-toggled #layoutSidenav #layoutSidenav_content {
+  padding-left: 225px;
+}
+
+#layoutError {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+#layoutError #layoutError_content {
+  min-width: 0;
+  flex-grow: 1;
+}
+
+#layoutError #layoutError_footer {
+  min-width: 0;
+}
+
+.img-error {
+  max-width: 20rem;
+}
+
+.nav .nav-link .sb-nav-link-icon,
+.sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  margin-right: 0.5rem;
+}
+
+.sb-topnav {
+  padding-left: 0;
+  height: 56px;
+  z-index: 1039;
+}
+
+.sb-topnav .navbar-brand {
+  width: 225px;
+  margin: 0;
+}
+
+.sb-topnav.navbar-dark #sidebarToggle {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-topnav.navbar-light #sidebarToggle {
+  color: #212529;
+}
+
+.sb-sidenav {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu {
+  flex-grow: 1;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav {
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-heading {
+  padding: 1.75rem 1rem 0.75rem;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link {
+  display: flex;
+  align-items: center;
+  padding-top: 0.75rem;
+  padding-bottom: 0.75rem;
+  position: relative;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-nav-link-icon {
+  font-size: 0.9rem;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link .sb-sidenav-collapse-arrow {
+  display: inline-block;
+  margin-left: auto;
+  transition: transform 0.15s ease;
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .nav-link.collapsed .sb-sidenav-collapse-arrow {
+  transform: rotate(-90deg);
+}
+
+.sb-sidenav .sb-sidenav-menu .nav .sb-sidenav-menu-nested {
+  margin-left: 1.5rem;
+  flex-direction: column;
+}
+
+.sb-sidenav .sb-sidenav-footer {
+  padding: 0.75rem;
+  flex-shrink: 0;
+}
+
+.sb-sidenav-dark {
+  background-color: #212529;
+  border-right: 1px solid var(--bs-border-color);
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+  color: rgba(255, 255, 255, 0.25);
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link:hover {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+  color: #fff;
+}
+
+.sb-sidenav-dark .sb-sidenav-footer {
+  background-color: #343a40;
+}
+
+.sb-sidenav-light {
+  background-color: #f8f9fa;
+  color: #212529;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .sb-sidenav-menu-heading {
+  color: #adb5bd;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link {
+  color: #212529;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-nav-link-icon {
+  color: #adb5bd;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link .sb-sidenav-collapse-arrow {
+  color: #adb5bd;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link:hover {
+  color: #0d6efd;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active {
+  color: #0d6efd;
+}
+
+.sb-sidenav-light .sb-sidenav-menu .nav-link.active .sb-nav-link-icon {
+  color: #0d6efd;
+}
+
+.sb-sidenav-light .sb-sidenav-footer {
+  background-color: #e9ecef;
+}
+
+footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* Center align items vertically */
+  border-top: 1px solid var(--bs-border-color);
+  /* Add border as needed */
+  box-sizing: border-box;
+  /* Ensure padding doesn't increase width */
+  position: sticky;
+  bottom: 0;
+  background-color: var(--bs-body-bg);
+  width: 100%;
+  /* Adjust width to accommodate sidebar */
+  padding: 15px;
+  box-shadow: 0px -5px 10px rgba(0, 0, 0, 0.1);
+  /* Optional: Add shadow effect */
+}
+
+
+/**/
+@media only screen and (min-width: 1900px) {
+
+  .card-scrollable {
+    height: 37em;
+  }
+
+  .card-scrollable.description-container {
+
+    height: 28em;
+
+  }
+
+  .taskPaneScroll {
+
+    overflow-y: auto;
+    max-height: 48em;
+
+  }
+
+}
+
+@media only screen and (min-width: 2500px) {
+
+  .card-scrollable {
+    height: 49em;
+  }
+
+  .taskPaneScroll {
+
+    overflow-y: auto;
+    max-height: 70em;
+
+  }
+
+  .card-scrollable.description-container {
+    height: 51em;
+  }
+
+}
+
+
+/*.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+*/

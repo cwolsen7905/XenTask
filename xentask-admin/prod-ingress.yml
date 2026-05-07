@@ -1,0 +1,25 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: live-prod
+  name: xentask-admin-ingress
+spec:
+  ingressClassName: webapprouting.kubernetes.azure.com
+  rules:
+  - host: admin.xentask.com
+    http:
+      paths:
+      - backend:
+          service:
+             name: xentask-admin-svc
+             port:
+               number: 8080
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+    - hosts:
+      - admin.xentask.com
+      secretName: tls-wildcard-xentask
+status:
+  loadBalancer:
+    ingress:

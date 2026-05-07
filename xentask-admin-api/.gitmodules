@@ -1,0 +1,6 @@
+[submodule "inc/xentask-core"]
+	path = inc/xentask-core
+	url = https://github.com/cwolsen7905/xentask-core
+[submodule "inc/ubcore"]
+	path = inc/ubcore
+	url = https://github.com/cwolsen7905/ubcore

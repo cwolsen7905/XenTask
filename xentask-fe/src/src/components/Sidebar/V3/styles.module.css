@@ -1,0 +1,46 @@
+.nodeWrapper {
+    align-items: center;
+    display: grid;
+    /*height: 32px;*/
+    border-radius: 4px;
+    cursor: pointer;
+    white-space: nowrap;
+  
+}
+
+.nodeWrapper:hover {
+background-color: rgba(0, 0, 0, 0.04);
+}
+
+
+.treeRoot {
+    list-style-type: none;
+    padding-inline-start: 0px;
+    
+}
+
+.treeRoot ul {
+    list-style-type: none;
+    padding-inline-start: 0px;
+}
+
+.treeRoot > li:after {
+    display: none;
+}
+
+.wrapper .draggingSource {
+    opacity: 0.3;
+}
+
+.wrapper .placeholder {
+    position: relative;
+}
+
+.wrapper > ul > li > .nodeWrapper > div.pipeY {
+display: none;
+}
+
+.wrapper li > .dropTarget {
+    outline: 1px solid #e8f0fe;
+    border-radius: 4px;
+}

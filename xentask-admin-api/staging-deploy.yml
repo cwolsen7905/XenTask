@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    field.cattle.io/creatorId: cwolsen
+  labels:
+    workload.user.cattle.io/workloadselector: deployment-ws-staging-xentask-admin-api
+  name: xentask-admin-api
+  namespace: ws-staging
+  selfLink: /apis/apps/v1/namespaces/ws-staging/deployments/xentask-admin-api
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 2
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      workload.user.cattle.io/workloadselector: deployment-ws-staging-xentask-admin-api
+  strategy:
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        field.cattle.io/ports: '[[{"containerPort":8080,"dnsName":"xentask-admin-api","hostPort":0,"kind":"ClusterIP","name":"8080tcp02","protocol":"TCP","sourcePort":0}]]'
+      creationTimestamp: null
+      labels:
+        workload.user.cattle.io/workloadselector: deployment-ws-staging-xentask-admin-api
+    spec:
+      affinity:
+        nodeAffinity:
+          requiredDuringSchedulingIgnoredDuringExecution:
+            nodeSelectorTerms:
+            - matchExpressions:
+              - key: kubernetes.io/arch
+                operator: In
+                values: [ "amd64","arm64" ]
+      containers:
+      - env:
+        - name: IN_DEV
+          value: "1"
+        - name: DEPLOY_ENV
+          value: "STAGING"
+        image: ghcr.io/your-org/xentask/xentask-admin-api:staging
+        imagePullPolicy: Always
+        name: xentask-admin-api
+        ports:
+        - containerPort: 8080
+          name: 8080tcp02
+          protocol: TCP
+        - containerPort: 8080
+          name: 8080tcp300801
+        resources: {}
+        securityContext:
+          allowPrivilegeEscalation: false
+          capabilities: {}
+          privileged: false
+          readOnlyRootFilesystem: false
+          runAsNonRoot: false
+        startupProbe:
+          failureThreshold: 3
+          httpGet:
+            path: /_zReady.php
+            port: 8080
+            scheme: HTTP
+          initialDelaySeconds: 5
+          periodSeconds: 5
+          successThreshold: 1
+          timeoutSeconds: 1
+        stdin: true
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+        tty: true
+        volumeMounts:
+        - mountPath: /logs
+          name: logs
+        - mountPath: /xentask
+          name: xentask
+      dnsPolicy: ClusterFirst
+      imagePullSecrets:
+      - name: regcred
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext: {}
+      terminationGracePeriodSeconds: 30
+      volumes:
+      - hostPath:
+          path: /logs
+          type: DirectoryOrCreate
+        name: logs
+      - nfs:
+          server: 10.50.0.1
+          path: /data/nfs/xentask
+        name: xentask

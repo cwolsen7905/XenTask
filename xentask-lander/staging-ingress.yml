@@ -1,0 +1,33 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  namespace: live-staging
+  name: xentask-lander-ingress
+  annotations:
+    field.cattle.io/creatorId: cwolsen
+    nginx.ingress.kubernetes.io/proxy-body-size: 256m
+spec:
+  ingressClassName: nginx
+  rules:
+  - host: xentask-lander.staging.your-domain.com
+    http:
+      paths:
+      - backend:
+          service:
+             name: xentask-lander
+             port:
+               number: 8080
+        path: /
+        pathType: ImplementationSpecific
+  tls:
+    - hosts:
+      - xentask-lander.staging.your-domain.com
+      secretName: tls-wildcard-your-domain-staging
+status:
+  loadBalancer:
+    ingress:
+      - hostname: kube-001.your-domain.com
+      - hostname: kube-002.your-domain.com
+      - hostname: kube-003.your-domain.com
+      - hostname: kube-004.your-domain.com
+      - hostname: kube-005.your-domain.com

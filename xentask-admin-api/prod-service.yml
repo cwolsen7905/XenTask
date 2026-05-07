@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+    name: xentask-admin-api-svc
+    namespace: ws-prod
+spec:
+    selector:
+      app: xentask-admin-api
+    ports:
+     - name: xentask-admin-api
+       protocol: TCP
+       port: 8080
+       targetPort: 8080
