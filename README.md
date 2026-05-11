@@ -133,4 +133,4 @@ Each service includes a GitHub Actions workflow in `.github/workflows/deploy.yml
 
 ## License
 
-MIT
+AGPL-3.0
